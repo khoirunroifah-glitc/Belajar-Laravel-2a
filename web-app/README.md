@@ -11,11 +11,9 @@ Proyek ini merupakan aplikasi web sederhana untuk tugas pemrograman web mengguna
 - **Daftar mahasiswa:** menampilkan data mahasiswa dalam tabel dengan kolom nama, alamat, dan gender.
 - **Kalkulator segitiga:** menerima nilai alas dan tinggi, lalu menampilkan hasil perhitungan luas dengan rumus `½ × alas × tinggi`. Contoh: alas 10 dan tinggi 8 menghasilkan luas 40.
 - Menggunakan tema warna pink lembut.
-- Menampilkan animasi pada elemen dan efek interaksi saat elemen diarahkan (*hover*).
+- Menampilkan animasi saat elemen muncul dan efek interaksi saat elemen diarahkan (*hover*).
 
 ### Contoh Hasil Daftar Mahasiswa
-
-Berikut contoh data yang ditampilkan pada halaman daftar mahasiswa:
 
 | Nama | Alamat | Gender |
 |---|---|---|
@@ -45,30 +43,25 @@ Luas Segitiga: 40
 
 ## Struktur Folder Utama
 
-Berikut struktur file yang berkaitan langsung dengan tugas:
+File aplikasi berada di dalam folder `web-app`:
 
 ```text
-web-app/
-├── app/
-│   └── Http/
-│       └── Controllers/
-│           ├── KalkulatorController.php
-│           └── MahasiswaController.php
-├── docs/
-│   └── screenshots/
-│       ├── daftar-mahasiswa.png
-│       └── kalkulator-segitiga.png
-├── public/
-│   └── css/
-│       └── style.css
-├── resources/
-│   └── views/
-│       ├── daftar_mahasiswa.blade.php
-│       └── segitiga.blade.php
-├── routes/
-│   └── web.php
-├── ...
-└── README.md
+repository/
+├── README.md
+└── web-app/
+    ├── README.md
+    ├── app/Http/Controllers/
+    │   ├── KalkulatorController.php
+    │   └── MahasiswaController.php
+    ├── docs/screenshots/
+    │   ├── daftar-mahasiswa.png
+    │   └── kalkulator-segitiga.png
+    ├── public/css/style.css
+    ├── resources/views/
+    │   ├── daftar_mahasiswa.blade.php
+    │   └── segitiga.blade.php
+    ├── routes/web.php
+    └── ...
 ```
 
 File dan folder bawaan Laravel lainnya tidak ditampilkan.
@@ -88,35 +81,35 @@ Pastikan PHP 8.3 atau lebih baru dan Composer sudah terpasang. Buka Git Bash dar
 
 1. Masuk ke folder proyek:
 
-```bash
-cd web-app
-```
+   ```bash
+   cd web-app
+   ```
 
 2. Pasang dependensi:
 
-```bash
-composer install
-```
+   ```bash
+   composer install
+   ```
 
 3. Salin file konfigurasi `.env`:
 
-```bash
-cp .env.example .env
-```
+   ```bash
+   cp .env.example .env
+   ```
 
 4. Buat kunci aplikasi:
 
-```bash
-php artisan key:generate
-```
+   ```bash
+   php artisan key:generate
+   ```
 
 5. Jalankan server:
 
-```bash
-php artisan serve
-```
+   ```bash
+   php artisan serve
+   ```
 
-Buka alamat `http://127.0.0.1:8000` di browser. Untuk halaman tugas, kunjungi `http://127.0.0.1:8000/daftar/mahasiswa` atau `http://127.0.0.1:8000/kalkulator/segitiga`.
+Buka `http://127.0.0.1:8000` di browser. Halaman daftar mahasiswa tersedia di `http://127.0.0.1:8000/daftar/mahasiswa`, dan kalkulator segitiga tersedia di `http://127.0.0.1:8000/kalkulator/segitiga`.
 
 ## Dokumentasi Screenshot
 
