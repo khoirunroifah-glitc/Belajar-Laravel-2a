@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('employes', function (Blueprint $table) {
             $table->integer('id');
-            $table->string('nama', 30);
+            $table->string('nama', 100);
             $table->text('alamat')->nullable();
             $table->enum('gender', ['L', 'P']);
             $table->integer('gaji');
