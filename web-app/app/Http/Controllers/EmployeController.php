@@ -52,4 +52,11 @@ class EmployeController extends Controller
         $employe->save();
         return redirect('/employe');
     }
+
+    // Hapus Data
+    public function destroy($id)
+    {
+        Employe::find($id)->delete();
+        return redirect('/employe');
+    }
 }

@@ -19,6 +19,11 @@
         <td>{{ number_format($row->gaji) }}</td>
         <td>
             <a href="/employe/edit/{{ $row->id }}"><button>Edit</button></a>
+            <form method="post" action="/employe/{{ $row->id }}" style="display:inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                @csrf
+                @method('delete')
+                <button type="submit">Hapus</button>
+            </form>
         </td>
     </tr>
     @endforeach
