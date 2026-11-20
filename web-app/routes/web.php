@@ -7,6 +7,8 @@ use App\Http\Controllers\Web;
 
 use App\Http\Controllers\DashboardController;
 
+use App\Http\Controllers\EmployeController;
+
 Route::get('/', function () {
     return 'Halo Nama Ku adalah Laravel, Salam Kenal';
 });
@@ -33,3 +35,5 @@ Route::post('/kalkulator/segitiga/proses', [KalkulatorController::class, 'hitung
 
 Route::get('/dashboard', [DashboardController::class, 'home']);
 Route::get('/gallery', [DashboardController::class, 'gallery']);
+
+Route::get('/employe',[EmployeController::class, 'index']);
