@@ -37,3 +37,5 @@ Route::get('/dashboard', [DashboardController::class, 'home']);
 Route::get('/gallery', [DashboardController::class, 'gallery']);
 
 Route::get('/employe',[EmployeController::class, 'index']);
+Route::get('/employe/create', [EmployeController::class, 'create']);
+Route::post('/employe/store', [EmployeController::class, 'store']);

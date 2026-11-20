@@ -19,4 +19,6 @@
     </tr>
     @endforeach
 </table>
+<br>
+<center><a href="/employe/create"><button>Tambah Pegawai</button></a></center>
 @endsection
