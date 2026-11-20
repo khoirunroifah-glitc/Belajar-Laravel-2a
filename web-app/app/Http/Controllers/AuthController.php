@@ -10,24 +10,26 @@ class AuthController extends Controller
 {
     public function cek(Request $request)
     {
-        $data = User::where('email', $request->email)->firstOrFail();
-        
-        if ($data) {
-            if (Hash::check($request->password, $data->password)) {
-                session(['email' => $request->email]);
-                session(['logged_in' => true]);
-                return redirect('/dashboard');
-            } else {
-                return redirect('/');
-            }
-        } else {
-            return redirect('/');
+        $data = User::where('email', $request->email)->first();
+
+        if (!$data) {
+            return redirect('/')->with('pesan', 'Email tidak ditemukan!');
         }
+
+        if (Hash::check($request->password, $data->password)) {
+            session(['email' => $request->email]);
+            session(['logged_in' => true]);
+
+            return redirect('/dashboard');
+        }
+
+        return redirect('/')->with('pesan', 'Password salah!');
     }
 
     public function logout(Request $request)
     {
         $request->session()->flush();
+
         return redirect('/');
     }
 }
