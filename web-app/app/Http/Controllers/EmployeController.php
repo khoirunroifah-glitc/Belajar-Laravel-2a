@@ -32,4 +32,24 @@ class EmployeController extends Controller
         $employe->save();
         return redirect('/employe');
     }
+
+    // Tampil Form Edit
+    public function show($id)
+    {
+        $data['judul'] = 'Ubah Data Pegawai';
+        $data['employe'] = Employe::find($id);
+        return view('edit_data', $data);
+    }
+
+    // Simpan Perubahan
+    public function update(Request $request, $id)
+    {
+        $employe = Employe::find($id);
+        $employe->nama = $request->nama;
+        $employe->alamat = $request->alamat;
+        $employe->gender = $request->gender;
+        $employe->gaji = $request->gaji;
+        $employe->save();
+        return redirect('/employe');
+    }
 }

@@ -8,6 +8,7 @@
         <th>Alamat</th>
         <th>Gender</th>
         <th>Gaji</th>
+        <th>Aksi</th>
     </tr>
     @foreach($employes as $row)
     <tr>
@@ -16,6 +17,9 @@
         <td>{{ $row->alamat }}</td>
         <td>{{ $row->gender == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
         <td>{{ number_format($row->gaji) }}</td>
+        <td>
+            <a href="/employe/edit/{{ $row->id }}"><button>Edit</button></a>
+        </td>
     </tr>
     @endforeach
 </table>
