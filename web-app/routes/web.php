@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 // Mengimpor controller untuk route /web.
 use App\Http\Controllers\Web;
 
+use App\Http\Controllers\DashboardController;
+
 Route::get('/', function () {
     return 'Halo Nama Ku adalah Laravel, Salam Kenal';
 });
@@ -28,3 +30,6 @@ Route::get('/kalkulator/segitiga', [KalkulatorController::class, 'segitiga']);
 
 // Memproses input dan menampilkan hasil perhitungan luas segitiga.
 Route::post('/kalkulator/segitiga/proses', [KalkulatorController::class, 'hitung_segitiga']);
+
+Route::get('/dashboard', [DashboardController::class, 'home']);
+Route::get('/gallery', [DashboardController::class, 'gallery']);
